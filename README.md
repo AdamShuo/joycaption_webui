@@ -15,6 +15,10 @@ Joy Caption WebUI 是一个基于 LLaVA 模型的图像标注工具，可以为�
 - 显示模型下载进度
 - 缓存管理功能
 
+| 模型加载和释放 | 单张图片打标 | 批量打标 |
+| ------------ | ------------ | ------------ |
+| ![image](img/9797748a35a996fc1d41fd3fe3f37ef.png) | ![image](img/bc94285e780ead8b6bcdcfd28f3ac3f.png) | ![image](img/b0aa2b212428637d080de9bd4e00015.png) |
+
 ## 没有算力？没关系，来云平台试用本项目！
 
 来🔗优云智算⚡️，一键部署:秋叶丹炉（Lora-Scripts）1.12+Joy Cation 3批量自动打标工具
