@@ -21,7 +21,13 @@ Joy Caption WebUI 是一个基于 LLaVA 模型的图像标注工具，可以为�
 ----------
 🔗https://www.compshare.cn/images/175oU3fDxmR2?referral_code=LjvXLkWsflPBezgjC8H2xJ
 
+在 腾讯Cloud Studio⚡️，复刻使用:秋叶丹炉（Lora-Scripts）1.12+Joy Cation 3批量自动打标工具
+----------
 [![Cloud Studio Template](https://cs-res.codehub.cn/common/assets/icon-badge.svg)](https://cloudstudio.net/a/28501271478620160?channel=share&sharetype=Markdown)
+
+在 仙宫云⚡️，部署:秋叶丹炉（Lora-Scripts）1.12+Joy Cation 3批量自动打标工具
+----------
+https://www.xiangongyun.com/image/detail/e1776c2d-354e-4a3e-9148-da4669f03297?r=32YFQ1
 
 ## 安装说明
 
