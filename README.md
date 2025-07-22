@@ -27,7 +27,8 @@ Joy Caption WebUI 是一个基于 LLaVA 模型的图像标注工具，可以为�
 
 在🔗仙宫云⚡️，部署:秋叶丹炉（Lora-Scripts）1.12+Joy Cation 3批量自动打标工具
 ----------
-https://www.xiangongyun.com/image/detail/e1776c2d-354e-4a3e-9148-da4669f03297?r=32YFQ1
+[![XGC Template](https://static.xiangongyun.com/article_images/nQg31pZqO4a-6XLSGDXE16mRFiqGPZX8N-fa650Ur2qPC8gQ5PTiqjnoM8dEgYzz.jpg)](https://www.xiangongyun.com/image/detail/e1776c2d-354e-4a3e-9148-da4669f03297?r=32YFQ1&sharetype=Markdown)
+
 
 ## 安装说明
 
