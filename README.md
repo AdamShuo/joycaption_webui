@@ -19,17 +19,17 @@ Joy Caption WebUI 是一个基于 LLaVA 模型的图像标注工具，可以为�
 | ------------ | ------------ | ------------ |
 | ![image](img/9797748a35a996fc1d41fd3fe3f37ef.png) | ![image](img/bc94285e780ead8b6bcdcfd28f3ac3f.png) | ![image](img/b0aa2b212428637d080de9bd4e00015.png) |
 
-## 没有算力？没关系，来云平台试用本项目！
+## 没有算力？没关系，来云平台试用本项目，点击下方相应logo即可跳转！
 
 来🔗优云智算⚡️，一键部署:秋叶丹炉（Lora-Scripts）1.12+Joy Cation 3批量自动打标工具
 ----------
 [![ucloud template](https://www-s.ucloud.cn/2025/07/24f53b4d1a5ad6e0b9c2343ff70b8669_1753151875506.png)](https://www.compshare.cn/images/175oU3fDxmR2?referral_code=LjvXLkWsflPBezgjC8H2xJ&sharetype=Markdown)
 
-在🔗腾讯Cloud Studio⚡️，复刻使用:秋叶丹炉（Lora-Scripts）1.12+Joy Cation 3批量自动打标工具
+来🔗腾讯Cloud Studio⚡️，复刻使用:秋叶丹炉（Lora-Scripts）1.12+Joy Cation 3批量自动打标工具
 ----------
 [![Cloud Studio Template](https://cs-res.codehub.cn/common/assets/icon-badge.svg)](https://cloudstudio.net/a/28501271478620160?channel=share&sharetype=Markdown)
 
-在🔗仙宫云⚡️，部署:秋叶丹炉（Lora-Scripts）1.12+Joy Cation 3批量自动打标工具
+来🔗仙宫云⚡️，快速部署:秋叶丹炉（Lora-Scripts）1.12+Joy Cation 3批量自动打标工具
 ----------
 [![XGC Template](https://static.xiangongyun.com/article_images/nQg31pZqO4a-6XLSGDXE16mRFiqGPZX8N-fa650Ur2qPC8gQ5PTiqjnoM8dEgYzz.jpg)](https://www.xiangongyun.com/image/detail/e1776c2d-354e-4a3e-9148-da4669f03297?r=32YFQ1&sharetype=Markdown)
 
