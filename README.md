@@ -21,6 +21,8 @@ Joy Caption WebUI 是一个基于 LLaVA 模型的图像标注工具，可以为�
 ----------
 🔗https://www.compshare.cn/images/175oU3fDxmR2?referral_code=LjvXLkWsflPBezgjC8H2xJ
 
+[![Cloud Studio Template](https://cs-res.codehub.cn/common/assets/icon-badge.svg)](https://cloudstudio.net/a/28501271478620160?channel=share&sharetype=Markdown)
+
 ## 安装说明
 
 ### 环境要求
