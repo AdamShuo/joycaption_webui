@@ -1,0 +1,16 @@
+codecov:
+  require_ci_to_pass: true
+
+coverage:
+  precision: 2
+  round: down
+  range: "70...100"
+
+  status:
+    project: true
+    patch: true
+    changes: false
+
+ignore:
+  - "**/test/**"
+  - "**/node_modules/**"

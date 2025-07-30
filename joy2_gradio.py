@@ -93,11 +93,28 @@ def load_model(model_name):
                                                                   device_map=0, use_auth_token=False,
                                                                   force_download=False, resume_download=True,
                                                                   proxies=None, local_files_only=False,
-                                                                  token=None, revision=None,
-                                                                  user_agent=None, _progress_callback=progress_callback)
+                                                                  token=None, revision=None)
         
         # 恢复日志级别
         logging.set_verbosity_warning()
+        
+        # 将模型文件移动到 models 目录
+        model_dir = os.path.join(MODELS_DIR, os.path.basename(model_name))
+        os.makedirs(model_dir, exist_ok=True)
+        
+        # 获取缓存目录中的模型文件
+        cache_dir = os.path.expanduser("~/.cache/huggingface/hub")
+        model_files = glob.glob(f"{cache_dir}/**/*{os.path.basename(model_name)}*", recursive=True)
+        
+        # 移动文件到目标目录
+        for file_path in model_files:
+            dest_path = os.path.join(model_dir, os.path.basename(file_path))
+            shutil.move(file_path, dest_path)
+        
+        print(f"模型文件已移动到: {model_dir}")
+        
+        # 更新模型路径
+        model_name = model_dir
     
     llava_model.eval()
     return processor, llava_model
@@ -239,70 +256,7 @@ def process_directory_interface(directory, prompt, max_tokens, temperature, top_
     except Exception as e:
         return f"批处理时出错: {str(e)}"
 
-# 缓存管理功能
-def get_cache_dir():
-    """获取Hugging Face缓存目录"""
-    cache_dir = os.path.expanduser("~/.cache/huggingface/hub")
-    if not os.path.exists(cache_dir):
-        # 尝试其他可能的缓存位置
-        alt_cache_dir = os.path.expanduser("~/.cache/huggingface/transformers")
-        if os.path.exists(alt_cache_dir):
-            cache_dir = alt_cache_dir
-    return cache_dir
 
-def get_cache_size():
-    """计算缓存大小"""
-    cache_dir = get_cache_dir()
-    if not os.path.exists(cache_dir):
-        return "缓存目录不存在", "0 MB"
-    
-    total_size = 0
-    for dirpath, dirnames, filenames in os.walk(cache_dir):
-        for f in filenames:
-            fp = os.path.join(dirpath, f)
-            if not os.path.islink(fp):
-                total_size += os.path.getsize(fp)
-    
-    # 转换为MB或GB
-    if total_size > 1024 * 1024 * 1024:
-        size_str = f"{total_size / (1024 * 1024 * 1024):.2f} GB"
-    else:
-        size_str = f"{total_size / (1024 * 1024):.2f} MB"
-    
-    # 获取模型文件列表
-    model_files = []
-    for model_id in HF_MODELS.values():
-        model_name = model_id.split("/")[-1]
-        model_files.extend(glob.glob(f"{cache_dir}/**/*{model_name}*", recursive=True))
-    
-    model_info = f"缓存目录: {cache_dir}\n"
-    model_info += f"已缓存的模型文件: {len(model_files)}\n"
-    
-    return model_info, size_str
-
-def clear_cache():
-    """清除缓存"""
-    cache_dir = get_cache_dir()
-    if not os.path.exists(cache_dir):
-        return "缓存目录不存在"
-    
-    try:
-        # 只删除与我们的模型相关的缓存文件
-        deleted_files = 0
-        for model_id in HF_MODELS.values():
-            model_name = model_id.split("/")[-1]
-            model_files = glob.glob(f"{cache_dir}/**/*{model_name}*", recursive=True)
-            for file_path in model_files:
-                if os.path.isfile(file_path):
-                    os.remove(file_path)
-                    deleted_files += 1
-                elif os.path.isdir(file_path):
-                    shutil.rmtree(file_path)
-                    deleted_files += 1
-        
-        return f"成功清除缓存，删除了 {deleted_files} 个文件/目录"
-    except Exception as e:
-        return f"清除缓存时出错: {str(e)}"
 
 def create_ui():
     with gr.Blocks(title="Joy Caption 图像标注工具") as demo:
@@ -380,41 +334,9 @@ def create_ui():
                 outputs=[batch_results]
             )
             
-        with gr.Tab("缓存管理"):
-            with gr.Row():
-                with gr.Column():
-                    cache_info = gr.Textbox(label="缓存信息", lines=5, interactive=False)
-                    cache_size = gr.Textbox(label="缓存大小", interactive=False)
-                    
-                    with gr.Row():
-                        refresh_cache_btn = gr.Button("刷新缓存信息")
-                        clear_cache_btn = gr.Button("清除模型缓存", variant="secondary")
+
             
-            # 初始化缓存信息
-            def init_cache_info():
-                info, size = get_cache_size()
-                return info, size
-            
-            # 刷新缓存信息
-            refresh_cache_btn.click(
-                fn=get_cache_size,
-                inputs=[],
-                outputs=[cache_info, cache_size]
-            )
-            
-            # 清除缓存
-            clear_cache_btn.click(
-                fn=clear_cache,
-                inputs=[],
-                outputs=[cache_info]
-            )
-            
-            # 页面加载时初始化缓存信息
-            demo.load(
-                fn=init_cache_info,
-                inputs=[],
-                outputs=[cache_info, cache_size]
-            )
+
         
         gr.Markdown("### 使用说明")
         gr.Markdown("""

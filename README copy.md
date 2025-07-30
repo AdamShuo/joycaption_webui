@@ -1,18 +1,5 @@
 # Joy Caption WebUI
 
-[![GitHub Stars](https://img.shields.io/github/stars/AdamShuo/joycaption_webui?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/stargazers)
-[![GitHub Forks](https://img.shields.io/github/forks/AdamShuo/joycaption_webui?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/network/members)
-[![GitHub License](https://img.shields.io/github/license/AdamShuo/joycaption_webui?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/blob/main/LICENSE)
-[![GitHub Issues](https://img.shields.io/github/issues/AdamShuo/joycaption_webui?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/issues)
-[![GitHub Release](https://img.shields.io/github/v/release/AdamShuo/joycaption_webui?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/releases)
-[![GitHub Downloads](https://img.shields.io/github/downloads/AdamShuo/joycaption_webui/total?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/releases)
-[![Build Status](https://img.shields.io/github/actions/workflow/status/AdamShuo/joycaption_webui/build.yml?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/actions)
-[![Codecov](https://img.shields.io/codecov/c/github/AdamShuo/joycaption_webui?style=for-the-badge)](https://codecov.io/gh/AdamShuo/joycaption_webui)
-[![Dependencies](https://img.shields.io/librariesio/github/AdamShuo/joycaption_webui?style=for-the-badge)](https://libraries.io/github/AdamShuo/joycaption_webui)
-[![Contributors](https://img.shields.io/github/contributors/AdamShuo/joycaption_webui?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/graphs/contributors)
-[![Last Commit](https://img.shields.io/github/last-commit/AdamShuo/joycaption_webui?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/commits/main)
-[![Activity](https://img.shields.io/github/commit-activity/m/AdamShuo/joycaption_webui?style=for-the-badge)](https://github.com/AdamShuo/joycaption_webui/pulse)
-
 Joy Caption WebUI 是一个基于 LLaVA 模型的图像标注工具，可以为图像生成详细的描述性标注。
 
 ## 关于原项目
@@ -26,7 +13,7 @@ Joy Caption WebUI 是一个基于 LLaVA 模型的图像标注工具，可以为�
 - 支持多种模型选择
 - 可自定义提示词和生成参数
 - 显示模型下载进度
-
+- 缓存管理功能
 
 | 模型加载和释放 | 单张图片打标 | 批量打标 |
 | ------------ | ------------ | ------------ |
@@ -217,15 +204,15 @@ Joy Caption 支持以下模型：
 
 程序会自动从Hugging Face Hub下载模型（如果本地不存在），无需手动下载。下载过程中会显示进度条，包括文件名、大小和下载速度。
 
-~~## 缓存管理~~
+## 缓存管理
 
-~~Joy Caption 2 提供了缓存管理功能，您可以：~~
+Joy Caption 2 提供了缓存管理功能，您可以：
 
-~~1. 在Web界面的"缓存管理"标签页查看缓存信息~~
-~~2. 查看缓存目录和已缓存的模型文件数量~~
-~~3. 查看缓存总大小~~
-~~4. 刷新缓存信息~~
-~~5. 清除模型缓存~~
+1. 在Web界面的"缓存管理"标签页查看缓存信息
+2. 查看缓存目录和已缓存的模型文件数量
+3. 查看缓存总大小
+4. 刷新缓存信息
+5. 清除模型缓存
 
 ## 示例
 
